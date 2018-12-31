@@ -101,17 +101,19 @@
                 android:layout_width="match_parent"
                 >
 
-                <Button
+                <LinearLayout
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="match_parent"
+                    android:background="@drawable/wdcl_open"
                     android:text="one" />
 
                 <Button
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="match_parent"
-                    android:text="two" />
+                    android:background="@drawable/cyjz"
+                     />
 
 
             </TableRow>
@@ -125,12 +127,14 @@
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="match_parent"
-                    android:text="one" />
+                    android:background="@drawable/sszt"
+                     />
 
                 <Button
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="match_parent"
+                    android:background="@drawable/csxg"
                     android:text="two" />
 
 
