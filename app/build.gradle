@@ -4,7 +4,7 @@ android {
     compileSdkVersion 25
     buildToolsVersion "25.0.2"
     defaultConfig {
-        applicationId "com.littlejie.app"
+        applicationId "com.battery.bms"
         minSdkVersion 15
         targetSdkVersion 25
         versionCode 1
@@ -33,4 +33,5 @@ dependencies {
         releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.1'
         testCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.1'
     }
+    compile project(path: ':circleprogress')
 }
