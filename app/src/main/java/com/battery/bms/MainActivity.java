@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mDialProgress.setOnClickListener(this);
         mWaveProgress.setOnClickListener(this);
         mRandom = new Random();
+        int a = 5;
     }
     @Override
     public void onClick(View v) {
