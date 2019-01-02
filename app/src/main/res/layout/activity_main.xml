@@ -75,7 +75,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="30dp"
-                android:text="本次里程：100km"
+                android:text="本次里程：0km"
                 android:textColor="@color/blue" />
 
 

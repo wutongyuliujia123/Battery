@@ -17,7 +17,7 @@ import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 import com.battery.battery.R;
-import com.battery.bms.utils.SpeedUtil;
+import com.battery.bms.utils.DateUtils;
 import com.littlejie.circleprogress.DialProgress;
 import com.littlejie.circleprogress.WaveProgress;
 import java.util.Random;
@@ -30,7 +30,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Switch mSwitch;
     private Random mRandom;
     private TextView tv_date;
+    private TextView tv_current_mileage;
+    private TextView tv_total_mileage;
     private LocationManager lm;
+    private LocationListener locationListener;
+    private float currentMileage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,50 +45,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             Toast.makeText(MainActivity.this, "请打开GPS~", Toast.LENGTH_SHORT).show();
             openGPS2();
         }
-        Location lc = SpeedUtil.getLastKnownLocation(MainActivity.this);
+        //  Location lc = SpeedUtil.getLastKnownLocation(MainActivity.this);
 
         mDialProgress = (DialProgress) findViewById(R.id.dial_progress_bar);
         mWaveProgress = (WaveProgress) findViewById(R.id.wave_progress_bar);
+        tv_current_mileage = (TextView) findViewById(R.id.current_mileage);
+        tv_total_mileage = (TextView) findViewById(R.id.total_mileage);
         mSwitch = (Switch) findViewById(R.id.switch_button);
         tv_date = (TextView) findViewById(R.id.tv_date);
-        //tv_date.setText(DateUtils.getDate());
-
-
-        tv_date.setText((lc != null ? lc.getSpeed() : 0) + "km/h");
-
-        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-            // TODO: Consider calling
-            //    ActivityCompat#requestPermissions
-            // here to request the missing permissions, and then overriding
-            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
-            //                                          int[] grantResults)
-            // to handle the case where the user grants the permission. See the documentation
-            // for ActivityCompat#requestPermissions for more details.
-            return;
-        }
-        lm.requestLocationUpdates(LocationManager.GPS_PROVIDER, 2000, 8, new LocationListener() {
-            @Override
-            public void onLocationChanged(Location location) {
-                tv_date.setText((location!=null?location.getSpeed() : 0)*3.6 + "千米/h");
-                mDialProgress.setValue((location!=null?location.getSpeed() : 0)*36/10);
-            }
-
-            @Override
-            public void onStatusChanged(String s, int i, Bundle bundle) {
-
-            }
-
-            @Override
-            public void onProviderEnabled(String s) {
-
-            }
-
-            @Override
-            public void onProviderDisabled(String s) {
-
-            }
-        });
-
+        tv_date.setText(DateUtils.getDate());
         mDialProgress.setOnClickListener(this);
         mWaveProgress.setOnClickListener(this);
         mSwitch.setOnClickListener(this);
@@ -94,9 +63,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-//            case R.id.btn_reset_all:
-//                mDialProgress.reset();
-//                break;
+            //            case R.id.btn_reset_all:
+            //                mDialProgress.reset();
+            //                break;
             case R.id.dial_progress_bar:
                 mDialProgress.setValue(mRandom.nextFloat() * mWaveProgress.getMaxValue());
                 break;
@@ -107,8 +76,52 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 boolean isChecked = mSwitch.isChecked();
                 if (isChecked) {
                     Toast.makeText(MainActivity.this, "开启", Toast.LENGTH_SHORT).show();
+                    locationListener = new LocationListener() {
+                        @Override
+                        public void onLocationChanged(Location location) {
+                            float s = (location != null ? location.getSpeed() : 0);
+                            double speed =  s * 3.6;
+                            tv_date.setText(speed + "千米/h");
+                            mDialProgress.setValue((float) speed);
+                            currentMileage += (s * 2 /1000);
+                        }
+
+                        @Override
+                        public void onStatusChanged(String s, int i, Bundle bundle) {
+
+                        }
+
+                        @Override
+                        public void onProviderEnabled(String s) {
+
+                        }
+
+                        @Override
+                        public void onProviderDisabled(String s) {
+
+                        }
+                    };
+                    if (ActivityCompat.checkSelfPermission(this,
+                        Manifest.permission.ACCESS_FINE_LOCATION)
+                        != PackageManager.PERMISSION_GRANTED
+                        && ActivityCompat.checkSelfPermission(this,
+                        Manifest.permission.ACCESS_COARSE_LOCATION)
+                        != PackageManager.PERMISSION_GRANTED) {
+                        // TODO: Consider calling
+                        Toast.makeText(MainActivity.this, "请打开GPS~", Toast.LENGTH_SHORT).show();
+                        openGPS2();
+                        return;
+                    }
+                    lm.requestLocationUpdates(LocationManager.GPS_PROVIDER, 2000, 8,
+                        locationListener);
                 } else {
                     Toast.makeText(MainActivity.this, "关闭", Toast.LENGTH_SHORT).show();
+                    tv_current_mileage.setText("本次里程："+currentMileage+" km");
+                    if (lm != null) {
+                        // 关闭程序时将监听器移除
+                        lm.removeUpdates(locationListener);
+                        locationListener = null;
+                    }
                 }
                 break;
             default:
