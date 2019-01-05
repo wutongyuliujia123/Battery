@@ -18,8 +18,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 import com.battery.battery.R;
 import com.battery.bms.utils.DateUtils;
+import com.battery.bms.utils.SharedPreferencesUtil;
 import com.littlejie.circleprogress.DialProgress;
 import com.littlejie.circleprogress.WaveProgress;
+
+import java.math.BigDecimal;
 import java.util.Random;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
@@ -35,6 +38,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private LocationManager lm;
     private LocationListener locationListener;
     private float currentMileage;
+    private float totalMileage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -116,7 +120,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         locationListener);
                 } else {
                     Toast.makeText(MainActivity.this, "关闭", Toast.LENGTH_SHORT).show();
-                    tv_current_mileage.setText("本次里程："+currentMileage+" km");
+                    BigDecimal currentM = new BigDecimal(currentMileage);
+                    tv_current_mileage.setText("本次里程："+currentM.setScale(2,BigDecimal.ROUND_HALF_UP).floatValue()+" km");
+                    String total = SharedPreferencesUtil.getSharedPreferencesValue(MainActivity.this,"totalMileage","0");
+                    totalMileage = Float.valueOf(total) + currentMileage;
+                    BigDecimal totalM = new BigDecimal(totalMileage);
+                    tv_total_mileage.setText("总里程："+totalM.setScale(2,BigDecimal.ROUND_HALF_UP).floatValue()+" km");
+                    SharedPreferencesUtil.setSharedPreferences(MainActivity.this,"totalMileage",String.valueOf(totalMileage));                          currentMileage = 0;
                     if (lm != null) {
                         // 关闭程序时将监听器移除
                         lm.removeUpdates(locationListener);
