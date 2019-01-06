@@ -55,6 +55,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mWaveProgress = (WaveProgress) findViewById(R.id.wave_progress_bar);
         tv_current_mileage = (TextView) findViewById(R.id.current_mileage);
         tv_total_mileage = (TextView) findViewById(R.id.total_mileage);
+        String total = SharedPreferencesUtil.getSharedPreferencesValue(MainActivity.this,"totalMileage","0");
+        totalMileage = Float.valueOf(total);
+        BigDecimal totalM = new BigDecimal(totalMileage);
+        tv_total_mileage.setText("总里程："+totalM.setScale(2,BigDecimal.ROUND_HALF_UP).floatValue()+" km");
         mSwitch = (Switch) findViewById(R.id.switch_button);
         tv_date = (TextView) findViewById(R.id.tv_date);
         tv_date.setText(DateUtils.getDate());
