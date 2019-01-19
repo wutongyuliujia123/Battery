@@ -1,4 +1,4 @@
-package com.battery.bms;
+package com.battery.bms.activity;
 
 import android.Manifest;
 import android.content.Context;
