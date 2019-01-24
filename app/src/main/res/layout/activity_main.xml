@@ -178,6 +178,7 @@
 
             <ImageButton
                 android:id="@+id/csxg"
+                android:clickable="true"
                 android:layout_width="145dp"
                 android:layout_height="145dp"
                 android:layout_marginLeft="20dp"
