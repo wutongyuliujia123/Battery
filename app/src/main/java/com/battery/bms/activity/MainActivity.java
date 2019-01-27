@@ -1,4 +1,4 @@
-package com.battery.bms;
+package com.battery.bms.activity;
 
 import android.Manifest;
 import android.content.Context;
@@ -13,6 +13,8 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.LinearLayout;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -28,6 +30,8 @@ import java.util.Random;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private Button mBtnResetAll;
+    private LinearLayout sszt;
+    private ImageButton csxg;
     private WaveProgress mWaveProgress;
     private DialProgress mDialProgress;
     private Switch mSwitch;
@@ -55,6 +59,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mWaveProgress = (WaveProgress) findViewById(R.id.wave_progress_bar);
         tv_current_mileage = (TextView) findViewById(R.id.current_mileage);
         tv_total_mileage = (TextView) findViewById(R.id.total_mileage);
+        sszt = (LinearLayout) findViewById(R.id.sszt);
+        csxg = (ImageButton) findViewById(R.id.csxg);
         String total = SharedPreferencesUtil.getSharedPreferencesValue(MainActivity.this,"totalMileage","0");
         totalMileage = Float.valueOf(total);
         BigDecimal totalM = new BigDecimal(totalMileage);
@@ -65,6 +71,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mDialProgress.setOnClickListener(this);
         mWaveProgress.setOnClickListener(this);
         mSwitch.setOnClickListener(this);
+        sszt.setOnClickListener(this);
+        csxg.setOnClickListener(this);
         mRandom = new Random();
     }
 
@@ -138,6 +146,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     }
                 }
                 break;
+            case R.id.sszt:
+                Intent intent = new Intent();
+                intent.setClass(MainActivity.this, CurrentState.class);
+                startActivity(intent);
+                break;
+            case R.id.csxg:
+                Intent intent2 = new Intent();
+                intent2.setClass(MainActivity.this, ParameterRepair.class);
+                startActivity(intent2);
             default:
                 break;
         }
