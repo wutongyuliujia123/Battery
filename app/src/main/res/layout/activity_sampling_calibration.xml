@@ -1,0 +1,1421 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.battery.bms.activity.CurrentState">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bground"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="参数修改"
+            android:textColor="@color/white"
+            android:textSize="25dp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="20dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:text="参数"
+                android:textColor="@color/white"
+                android:textSize="20dp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:text="当前值"
+                android:textColor="@color/white"
+                android:textSize="20dp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:text="修改为"
+                android:textColor="@color/white"
+                android:textSize="20dp" />
+        </LinearLayout>
+
+        <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:scrollbars="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+                        android:text="电池总压"
+                        android:textColor="@color/mygreen"
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:id="@+id/tv_PackVoltage"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:text="6928.8700"
+                        android:textColor="@color/white"
+                        android:textSize="15dp" />
+
+                    <EditText
+                        android:id="@+id/et_PackVoltage"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:text="1764.55"
+                        android:textColor="@color/white"
+                        android:textSize="15dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+                        android:text="电芯电压1"
+                        android:textColor="@color/mygreen"
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:id="@+id/tv_CellVoltage1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:text="6928.8700"
+                        android:textColor="@color/white"
+                        android:textSize="15dp" />
+
+                    <EditText
+                        android:id="@+id/et_CellVoltage1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:text="1764.55"
+                        android:textColor="@color/white"
+                        android:textSize="15dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+                        android:text="电芯电压2"
+                        android:textColor="@color/mygreen"
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:id="@+id/tv_CellVoltage2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:text="6928.8700"
+                        android:textColor="@color/white"
+                        android:textSize="15dp" />
+
+                    <EditText
+                        android:id="@+id/et_CellVoltage2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:text="1764.55"
+                        android:textColor="@color/white"
+                        android:textSize="15dp" />
+                </LinearLayout>
+                <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:text="电芯电压3"
+                    android:textColor="@color/mygreen"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:id="@+id/tv_CellVoltage3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="6928.8700"
+                    android:textColor="@color/white"
+                    android:textSize="15dp" />
+
+                <EditText
+                    android:id="@+id/et_CellVoltage3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="1764.55"
+                    android:textColor="@color/white"
+                    android:textSize="15dp" />
+            </LinearLayout>
+                <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:text="电芯电压4"
+                    android:textColor="@color/mygreen"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:id="@+id/tv_CellVoltage4"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="6928.8700"
+                    android:textColor="@color/white"
+                    android:textSize="15dp" />
+
+                <EditText
+                    android:id="@+id/et_CellVoltage4"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="1764.55"
+                    android:textColor="@color/white"
+                    android:textSize="15dp" />
+            </LinearLayout>
+                <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:text="电芯电压5"
+                    android:textColor="@color/mygreen"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:id="@+id/tv_CellVoltage5"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="6928.8700"
+                    android:textColor="@color/white"
+                    android:textSize="15dp" />
+
+                <EditText
+                    android:id="@+id/et_CellVoltage5"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="1764.55"
+                    android:textColor="@color/white"
+                    android:textSize="15dp" />
+            </LinearLayout>
+                <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:text="电芯电压6"
+                    android:textColor="@color/mygreen"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:id="@+id/tv_CellVoltage6"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="6928.8700"
+                    android:textColor="@color/white"
+                    android:textSize="15dp" />
+
+                <EditText
+                    android:id="@+id/et_CellVoltage6"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="1764.55"
+                    android:textColor="@color/white"
+                    android:textSize="15dp" />
+            </LinearLayout>
+                <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:text="电芯电压7"
+                    android:textColor="@color/mygreen"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:id="@+id/tv_CellVoltage7"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="6928.8700"
+                    android:textColor="@color/white"
+                    android:textSize="15dp" />
+
+                <EditText
+                    android:id="@+id/et_CellVoltage7"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="1764.55"
+                    android:textColor="@color/white"
+                    android:textSize="15dp" />
+            </LinearLayout>
+                <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:text="电芯电压8"
+                    android:textColor="@color/mygreen"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:id="@+id/tv_CellVoltage8"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="6928.8700"
+                    android:textColor="@color/white"
+                    android:textSize="15dp" />
+
+                <EditText
+                    android:id="@+id/et_CellVoltage8"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="1764.55"
+                    android:textColor="@color/white"
+                    android:textSize="15dp" />
+            </LinearLayout>
+                <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:text="电芯电压9"
+                    android:textColor="@color/mygreen"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:id="@+id/tv_CellVoltage9"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="6928.8700"
+                    android:textColor="@color/white"
+                    android:textSize="15dp" />
+
+                <EditText
+                    android:id="@+id/et_CellVoltage9"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="1764.55"
+                    android:textColor="@color/white"
+                    android:textSize="15dp" />
+            </LinearLayout>
+                <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:text="电芯电压10"
+                    android:textColor="@color/mygreen"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:id="@+id/tv_CellVoltage10"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="6928.8700"
+                    android:textColor="@color/white"
+                    android:textSize="15dp" />
+
+                <EditText
+                    android:id="@+id/et_CellVoltage10"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="1764.55"
+                    android:textColor="@color/white"
+                    android:textSize="15dp" />
+            </LinearLayout>
+                <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:text="电芯电压11"
+                    android:textColor="@color/mygreen"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:id="@+id/tv_CellVoltage11"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="6928.8700"
+                    android:textColor="@color/white"
+                    android:textSize="15dp" />
+
+                <EditText
+                    android:id="@+id/et_CellVoltage11"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="1764.55"
+                    android:textColor="@color/white"
+                    android:textSize="15dp" />
+            </LinearLayout>
+                <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:text="电芯电压12"
+                    android:textColor="@color/mygreen"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:id="@+id/tv_CellVoltage12"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="6928.8700"
+                    android:textColor="@color/white"
+                    android:textSize="15dp" />
+
+                <EditText
+                    android:id="@+id/et_CellVoltage12"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="1764.55"
+                    android:textColor="@color/white"
+                    android:textSize="15dp" />
+            </LinearLayout>
+                <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:text="电芯电压13"
+                    android:textColor="@color/mygreen"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:id="@+id/tv_CellVoltage13"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="6928.8700"
+                    android:textColor="@color/white"
+                    android:textSize="15dp" />
+
+                <EditText
+                    android:id="@+id/et_CellVoltage13"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="1764.55"
+                    android:textColor="@color/white"
+                    android:textSize="15dp" />
+            </LinearLayout>
+                <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:text="电芯电压14"
+                    android:textColor="@color/mygreen"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:id="@+id/tv_CellVoltage14"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="6928.8700"
+                    android:textColor="@color/white"
+                    android:textSize="15dp" />
+
+                <EditText
+                    android:id="@+id/et_CellVoltage14"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="1764.55"
+                    android:textColor="@color/white"
+                    android:textSize="15dp" />
+            </LinearLayout>    <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:text="电芯电压15"
+                    android:textColor="@color/mygreen"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:id="@+id/tv_CellVoltage15"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="6928.8700"
+                    android:textColor="@color/white"
+                    android:textSize="15dp" />
+
+                <EditText
+                    android:id="@+id/et_CellVoltage15"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="1764.55"
+                    android:textColor="@color/white"
+                    android:textSize="15dp" />
+            </LinearLayout>    <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:text="电芯电压16"
+                    android:textColor="@color/mygreen"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:id="@+id/tv_CellVoltage16"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="6928.8700"
+                    android:textColor="@color/white"
+                    android:textSize="15dp" />
+
+                <EditText
+                    android:id="@+id/et_CellVoltage16"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="1764.55"
+                    android:textColor="@color/white"
+                    android:textSize="15dp" />
+            </LinearLayout>    <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:text="电芯电压17"
+                    android:textColor="@color/mygreen"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:id="@+id/tv_CellVoltage17"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="6928.8700"
+                    android:textColor="@color/white"
+                    android:textSize="15dp" />
+
+                <EditText
+                    android:id="@+id/et_CellVoltage17"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="1764.55"
+                    android:textColor="@color/white"
+                    android:textSize="15dp" />
+            </LinearLayout>    <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:text="电芯电压18"
+                    android:textColor="@color/mygreen"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:id="@+id/tv_CellVoltage18"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="6928.8700"
+                    android:textColor="@color/white"
+                    android:textSize="15dp" />
+
+                <EditText
+                    android:id="@+id/et_CellVoltage18"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="1764.55"
+                    android:textColor="@color/white"
+                    android:textSize="15dp" />
+            </LinearLayout>    <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:text="电芯电压19"
+                    android:textColor="@color/mygreen"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:id="@+id/tv_CellVoltage19"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="6928.8700"
+                    android:textColor="@color/white"
+                    android:textSize="15dp" />
+
+                <EditText
+                    android:id="@+id/et_CellVoltage19"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="1764.55"
+                    android:textColor="@color/white"
+                    android:textSize="15dp" />
+            </LinearLayout>    <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:text="电芯电压20"
+                    android:textColor="@color/mygreen"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:id="@+id/tv_CellVoltage20"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="6928.8700"
+                    android:textColor="@color/white"
+                    android:textSize="15dp" />
+
+                <EditText
+                    android:id="@+id/et_CellVoltage20"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="1764.55"
+                    android:textColor="@color/white"
+                    android:textSize="15dp" />
+            </LinearLayout>    <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:text="电芯电压21"
+                    android:textColor="@color/mygreen"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:id="@+id/tv_CellVoltage21"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="6928.8700"
+                    android:textColor="@color/white"
+                    android:textSize="15dp" />
+
+                <EditText
+                    android:id="@+id/et_CellVoltage21"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="1764.55"
+                    android:textColor="@color/white"
+                    android:textSize="15dp" />
+            </LinearLayout>    <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:text="电芯电压22"
+                    android:textColor="@color/mygreen"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:id="@+id/tv_CellVoltage22"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="6928.8700"
+                    android:textColor="@color/white"
+                    android:textSize="15dp" />
+
+                <EditText
+                    android:id="@+id/et_CellVoltage22"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="1764.55"
+                    android:textColor="@color/white"
+                    android:textSize="15dp" />
+            </LinearLayout>    <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:text="电芯电压23"
+                    android:textColor="@color/mygreen"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:id="@+id/tv_CellVoltage23"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="6928.8700"
+                    android:textColor="@color/white"
+                    android:textSize="15dp" />
+
+                <EditText
+                    android:id="@+id/et_CellVoltage23"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="1764.55"
+                    android:textColor="@color/white"
+                    android:textSize="15dp" />
+            </LinearLayout>    <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:text="电芯电压24"
+                    android:textColor="@color/mygreen"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:id="@+id/tv_CellVoltage24"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="6928.8700"
+                    android:textColor="@color/white"
+                    android:textSize="15dp" />
+
+                <EditText
+                    android:id="@+id/et_CellVoltage24"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="1764.55"
+                    android:textColor="@color/white"
+                    android:textSize="15dp" />
+            </LinearLayout>    <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:text="电芯电压25"
+                    android:textColor="@color/mygreen"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:id="@+id/tv_CellVoltage25"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="6928.8700"
+                    android:textColor="@color/white"
+                    android:textSize="15dp" />
+
+                <EditText
+                    android:id="@+id/et_CellVoltage25"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="1764.55"
+                    android:textColor="@color/white"
+                    android:textSize="15dp" />
+            </LinearLayout>    <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:text="电芯电压26"
+                    android:textColor="@color/mygreen"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:id="@+id/tv_CellVoltage26"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="6928.8700"
+                    android:textColor="@color/white"
+                    android:textSize="15dp" />
+
+                <EditText
+                    android:id="@+id/et_CellVoltage26"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="1764.55"
+                    android:textColor="@color/white"
+                    android:textSize="15dp" />
+            </LinearLayout>    <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:text="电芯电压27"
+                    android:textColor="@color/mygreen"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:id="@+id/tv_CellVoltage27"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="6928.8700"
+                    android:textColor="@color/white"
+                    android:textSize="15dp" />
+
+                <EditText
+                    android:id="@+id/et_CellVoltage27"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="1764.55"
+                    android:textColor="@color/white"
+                    android:textSize="15dp" />
+            </LinearLayout>    <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:text="电芯电压28"
+                    android:textColor="@color/mygreen"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:id="@+id/tv_CellVoltage28"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="6928.8700"
+                    android:textColor="@color/white"
+                    android:textSize="15dp" />
+
+                <EditText
+                    android:id="@+id/et_CellVoltage28"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="1764.55"
+                    android:textColor="@color/white"
+                    android:textSize="15dp" />
+            </LinearLayout>    <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:text="电芯电压29"
+                    android:textColor="@color/mygreen"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:id="@+id/tv_CellVoltage29"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="6928.8700"
+                    android:textColor="@color/white"
+                    android:textSize="15dp" />
+
+                <EditText
+                    android:id="@+id/et_CellVoltage29"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="1764.55"
+                    android:textColor="@color/white"
+                    android:textSize="15dp" />
+            </LinearLayout>    <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:text="电芯电压30"
+                    android:textColor="@color/mygreen"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:id="@+id/tv_CellVoltage30"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="6928.8700"
+                    android:textColor="@color/white"
+                    android:textSize="15dp" />
+
+                <EditText
+                    android:id="@+id/et_CellVoltage30"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="1764.55"
+                    android:textColor="@color/white"
+                    android:textSize="15dp" />
+            </LinearLayout>    <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:text="电芯电压31"
+                    android:textColor="@color/mygreen"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:id="@+id/tv_CellVoltage31"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="6928.8700"
+                    android:textColor="@color/white"
+                    android:textSize="15dp" />
+
+                <EditText
+                    android:id="@+id/et_CellVoltage31"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="1764.55"
+                    android:textColor="@color/white"
+                    android:textSize="15dp" />
+            </LinearLayout>    <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:text="电芯电压32"
+                    android:textColor="@color/mygreen"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:id="@+id/tv_CellVoltage32"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="6928.8700"
+                    android:textColor="@color/white"
+                    android:textSize="15dp" />
+
+                <EditText
+                    android:id="@+id/et_CellVoltage32"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="1764.55"
+                    android:textColor="@color/white"
+                    android:textSize="15dp" />
+            </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+                        android:text="温度探头1"
+                        android:textColor="@color/mygreen"
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:id="@+id/tv_Temp1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:text="6928.8700"
+                        android:textColor="@color/white"
+                        android:textSize="15dp" />
+
+                    <EditText
+                        android:id="@+id/et_Temp1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:text="1764.55"
+                        android:textColor="@color/white"
+                        android:textSize="15dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+                        android:text="温度探头2"
+                        android:textColor="@color/mygreen"
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:id="@+id/tv_Temp2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:text="6928.8700"
+                        android:textColor="@color/white"
+                        android:textSize="15dp" />
+
+                    <EditText
+                        android:id="@+id/et_Temp2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:text="1764.55"
+                        android:textColor="@color/white"
+                        android:textSize="15dp" />
+                </LinearLayout>       <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:text="温度探头3"
+                    android:textColor="@color/mygreen"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:id="@+id/tv_Temp3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="6928.8700"
+                    android:textColor="@color/white"
+                    android:textSize="15dp" />
+
+                <EditText
+                    android:id="@+id/et_Temp3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="1764.55"
+                    android:textColor="@color/white"
+                    android:textSize="15dp" />
+            </LinearLayout>       <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:text="温度探头4"
+                    android:textColor="@color/mygreen"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:id="@+id/tv_Temp4"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="6928.8700"
+                    android:textColor="@color/white"
+                    android:textSize="15dp" />
+
+                <EditText
+                    android:id="@+id/et_Temp4"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="1764.55"
+                    android:textColor="@color/white"
+                    android:textSize="15dp" />
+            </LinearLayout>       <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:text="温度探头5"
+                    android:textColor="@color/mygreen"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:id="@+id/tv_Temp5"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="6928.8700"
+                    android:textColor="@color/white"
+                    android:textSize="15dp" />
+
+                <EditText
+                    android:id="@+id/et_Temp5"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="1764.55"
+                    android:textColor="@color/white"
+                    android:textSize="15dp" />
+            </LinearLayout>       <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:text="温度探头6"
+                    android:textColor="@color/mygreen"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:id="@+id/tv_Temp6"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="6928.8700"
+                    android:textColor="@color/white"
+                    android:textSize="15dp" />
+
+                <EditText
+                    android:id="@+id/et_Temp6"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="1764.55"
+                    android:textColor="@color/white"
+                    android:textSize="15dp" />
+            </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+                        android:text="负载输出电流"
+                        android:textColor="@color/mygreen"
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:id="@+id/tv_DischargeCurrent"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:text="6928.8700"
+                        android:textColor="@color/white"
+                        android:textSize="15dp" />
+
+                    <EditText
+                        android:id="@+id/et_DischargeCurrent"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:text="1764.55"
+                        android:textColor="@color/white"
+                        android:textSize="15dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+                        android:text="静态输出电流"
+                        android:textColor="@color/mygreen"
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:id="@+id/tv_CurrentOffset"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:text="6928.8700"
+                        android:textColor="@color/white"
+                        android:textSize="15dp" />
+
+                    <EditText
+                        android:id="@+id/et_CurrentOffset"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:text="1764.55"
+                        android:textColor="@color/white"
+                        android:textSize="15dp" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </ScrollView>
+
+        <Button
+            android:id="@+id/bt_Revise"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@color/mygreen"
+            android:layout_marginBottom="10dp"
+            android:text="确认修改" />
+    </LinearLayout>
+
+
+</android.support.constraint.ConstraintLayout>
