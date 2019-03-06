@@ -32,6 +32,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button mBtnResetAll;
     private LinearLayout sszt;
     private ImageButton csxg;
+    private ImageButton cyjz;
     private WaveProgress mWaveProgress;
     private DialProgress mDialProgress;
     private Switch mSwitch;
@@ -61,6 +62,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         tv_total_mileage = (TextView) findViewById(R.id.total_mileage);
         sszt = (LinearLayout) findViewById(R.id.sszt);
         csxg = (ImageButton) findViewById(R.id.csxg);
+        cyjz = (ImageButton) findViewById(R.id.cyjz);
         String total = SharedPreferencesUtil.getSharedPreferencesValue(MainActivity.this,"totalMileage","0");
         totalMileage = Float.valueOf(total);
         BigDecimal totalM = new BigDecimal(totalMileage);
@@ -73,6 +75,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mSwitch.setOnClickListener(this);
         sszt.setOnClickListener(this);
         csxg.setOnClickListener(this);
+        cyjz.setOnClickListener(this);
         mRandom = new Random();
     }
 
@@ -155,6 +158,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Intent intent2 = new Intent();
                 intent2.setClass(MainActivity.this, ParameterRepair.class);
                 startActivity(intent2);
+            case R.id.cyjz:
+                Intent intent3 = new Intent();
+                intent3.setClass(MainActivity.this, SamplingCalibration.class);
+                startActivity(intent3);
             default:
                 break;
         }

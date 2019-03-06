@@ -23,7 +23,8 @@
             </intent-filter>
         </activity>
         <activity android:name="com.battery.bms.activity.CurrentState" />
-        <activity android:name="com.battery.bms.activity.ParameterRepair"></activity>
+        <activity android:name="com.battery.bms.activity.ParameterRepair" />
+        <activity android:name="com.battery.bms.activity.SamplingCalibration"></activity>
     </application>
 
 </manifest>
