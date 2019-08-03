@@ -19,6 +19,7 @@ import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 import com.battery.battery.R;
+import com.battery.bms.model.CurrentState;
 import com.battery.bms.utils.DateUtils;
 import com.battery.bms.utils.SharedPreferencesUtil;
 import com.littlejie.circleprogress.DialProgress;
@@ -151,16 +152,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.sszt:
                 Intent intent = new Intent();
-                intent.setClass(MainActivity.this, CurrentState.class);
+                intent.setClass(MainActivity.this, BluetoothActivity.class);
                 startActivity(intent);
                 break;
             case R.id.csxg:
                 Intent intent2 = new Intent();
-                intent2.setClass(MainActivity.this, ParameterRepair.class);
+                intent2.setClass(MainActivity.this, ParameterRepairActivity.class);
                 startActivity(intent2);
+                break;
             case R.id.cyjz:
                 Intent intent3 = new Intent();
-                intent3.setClass(MainActivity.this, SamplingCalibration.class);
+                intent3.setClass(MainActivity.this, SamplingCalibrationActivity.class);
                 startActivity(intent3);
             default:
                 break;
